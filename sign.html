@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+   <script src="js/jquery-1.8.2.js">
+    </script>
+    <script>
+
+    $(function(){
+        $(".content div li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+            var i=$(this).index();
+            if(i==0){
+                $(".content form").eq(0).show();
+            $(".content form").eq(1).hide();
+            }else{
+                $(".content form").eq(1).show();
+            $(".content form").eq(0).hide();
+            }
+            
+        })
+    })
+    </script>
+</head>
+<style>
+body{background: url(images/注册背景.png);}
+.content{margin: 0 auto;width:400px;}
+.content img{
+    width:300px;
+    height:200px;
+    margin-left: 50px;
+}
+.content form{
+    width:400px;
+   text-align: center;
+}
+
+.content div{width: 400px;height:40px;}
+.content div ul{
+    height:40px;
+    position: relative;
+    left:60px;}
+.content  div ul li{
+    list-style: none;
+    float: left;
+    margin-left:30px;
+}
+.content  div input{
+    background: none;
+    border:none;
+    outline:none;
+    width:60px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    font-size:20px;
+    
+
+
+}
+.active{
+    color:#0f96ef;
+    border-bottom: 2px solid #0f88eb;
+   
+}
+.content form .t1 {
+    border-radius: 5px;
+    border:2px solid gray;
+    margin:5px;
+    outline:none;
+    width:300px;
+    height:50px;
+    padding-left:10px;
+
+}
+.content form .t2 {
+    border-radius: 5px;
+    border:2px solid gray;
+    margin:5px;
+    outline:none;
+    width:300px;
+    height:50px;
+     padding-left:10px;
+
+}
+.btn{width:310px;
+    height: 50px;
+    background: #0f88eb;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+
+}
+.form_s{
+    display: none;
+}
+.footer{
+    
+    margin-left: 45px;
+    margin-top:20px;
+
+
+}
+.le{float: left;
+    text-decoration: none;
+}
+.ri{float: right;
+    margin-right: 85px;
+    text-decoration: none;
+    color:gray;
+}
+</style>
+<body>
+<div class="content">
+<img src="images/无底logo.png" alt="tutu">
+<div>
+    
+<ul>
+    <li class="active"><input  type="button" value="登陆"></li>
+    <li ><input type="button" value="注册"></li>
+</ul>
+</div>
+<form action="post">
+
+<input class="t1" type="text" value="请输入账号"><br>
+<input class="t2" type="password" value="请输入密码">
+
+<input class="btn" type="button" value="登陆">
+</form>
+
+<form action="post" class="form_s">
+
+<input class="t1" type="text" value="请输入账号"><br>
+<input class="t2" type="password" value="请输入密码">
+
+<input class="btn" type="button" value="注册">
+</form>
+
+
+<div class="footer">
+    <a class="le" href="#">手机验证码登陆</a>
+    <a class="ri" href="#">无法登陆？</a>
+
+</div>
+</div>
+
+    
+</body>
+</html>

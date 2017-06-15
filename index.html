@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拾壹元素</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="js/jquery-1.8.2.js">
+    </script>
+    <script>
+    $(function(){
+        $(".left ul li :last").css("border","none")
+        $(".right ul li :first").css("border","none")
+        $(".head_nav ul li a:lt(3)").css("color","red");
+
+
+       $(".content_nav ul li").hover(function(){
+        $(this).children().addClass('active');
+        $(this).siblings().children().removeClass('active');
+
+       })
+
+       $(".roll_top li").click(function(){
+    $(this).children().addClass("chose");
+    $(this).siblings().children().removeClass("chose")
+    var i=$(this).index();
+    $(".roll_nav div ul").eq(i).show();
+    $(".roll_nav div ul").eq(i).siblings().hide();
+
+    });
+
+
+
+        
+
+        
+         var i=0;
+        function fun1(){
+           
+            i++;
+            
+            $(".roll_tank").animate({left:-800*i},500);
+            $(".roll_btn li").eq(i).children().addClass("radio");
+            $(".roll_btn li").eq(i).siblings().children().removeClass("radio")
+           
+            if(i==5){
+                i=-1;
+            }
+        }
+
+        
+       function fun2( index){
+       
+            $(".roll_tank ").animate({left:-800*index},10);
+
+           }
+
+
+        $(".roll_btn li").mouseover(function (){
+             clearInterval(time);
+           
+            $index=$(this).index();
+            fun2($index);
+            $(this).children().addClass('radio');
+            $(this).siblings().children().removeClass('radio')
+        });
+         $(".roll_btn li").mouseout(function(){
+            
+            time = setInterval(fun1,2000);
+        })
+         var time= setInterval(fun1,2000);
+    
+    });
+
+
+    </script>
+
+</head>
+
+<body>
+<div id="container">
+    <div id="nav">
+    <img src="images/ELEV.png">
+       <div class="left">
+             <ul>
+                <li><a href="#">手机客户端下载</a></li>
+                <li><a href="#">官方微博</a></li>
+                <li><a href="#">微信公众号</a></li>
+            </ul>  
+            
+               
+       </div> 
+       <div class="right"> 
+                <ul >
+                    <li><a href="sign.html" target="_blank">登陆</a></li>
+                    <li><a href="sign.html" target="_blank">注册</a></li>
+                    
+                </ul>  
+            </div>
+       
+            
+      
+       
+</div>
+<div id="head">
+   
+        <a href="#"><img  src="images/11元素.png"/></a>
+   
+    <div class="head_nav">
+     <img class="nav_img" src="images/推荐.png" style="width:40px;height:22px;margin-top:10px;
+     margin-left:2px;" />
+
+   
+       
+            <ul  >
+                
+                <li><a href="#"><span> 魔兽世界</span></a></li>
+                <li><a href="#"><span>丨 英雄联盟</span></a></li>
+                <li><a href="#"><span>丨 天涯明月刀OL</span></a></li>
+                <li><a href="#"><span>丨 地下城与勇士</span></a></li>
+                <li><a href="#"><span>丨 DOTA2</span></a></li>
+                <li><a href="#"><span>丨 逆战</span></a></li>
+                <li><a href="#"><span>丨 勇士斗恶龙X</span></a></li>
+                <li><a href="#"><span>丨 FIFA OL3</span></a></li>
+                <li><a href="#"><span>丨 剑灵</span></a></li> <br/>
+            </ul>
+
+          <img class="nav_img" src="images/热门.png" style="width:40px;height:22px;margin-top:8px;margin-left:2px;" />
+      
+            <ul >
+               
+                <li><a href="#"><span> 守望先锋</span></a></li>
+                <li><a href="#"><span>丨 冒险岛2</span></a></li>
+                <li><a href="#"><span>丨 炉石传说</span></a></li>
+                <li><a href="#"><span>丨 诛仙3</span></a></li>
+                <li><a href="#"><span>丨 300英雄</span></a></li>
+                <li><a href="#"><span>丨 刀锋铁骑</span></a></li>
+                <li><a href="#"><span>丨 怪物猎人</span></a></li>
+                <li><a href="#"><span>丨 极品飞车OL</span></a></li>
+                <li><a href="#"><span>丨 蜀山缥缈录</span></a></li>
+            </ul>
+        </div>
+       
+</div>
+    <div id="content">
+            <div class="content_nav">
+                <ul>
+                    <li ><a class="active"  href="#">网游</a></li>
+                    <li><a href="#">新闻</a></li>
+                    <li><a href="#">测评</a></li>
+                    <li><a href="#">攻略</a></li>
+                
+                   
+                </ul>
+                
+                   <div class="search">
+                         <input class="btn" type="button" value="">
+                    <input class="input_text " type="text" value="请输入关键词">
+                   </div>
+                
+
+            </div>
+            <div class="roll">
+                    <div class="roll_tank">
+
+<div> <img class="img1" src="images/CG1.png" alt="page1"></div>
+<div><img src="images/CG2.png" alt="page2"></div>
+<div> <img src="images/CG3.png" alt="page3"></div>
+<div><img src="images/CG2.png" alt="page4"></div> <div> <img src="images/CG1.png" alt="page5"></div>
+<div><img src="images/CG3.png" alt="page6"></div>
+
+                        
+                    </div>
+
+                <ul class="roll_btn">
+                    <li  ><a class="radio"  href="#"><span>&nbsp </span ></a></li>
+                   <li><a href="#"><span>&nbsp </span></a></li>
+                   <li><a href="#"><span>&nbsp </span></a></li>
+                   <li><a href="#"><span>&nbsp</span></a></li>
+                   <li><a href="#"><span>&nbsp </span></a></li>
+                   <li><a href="#"><span>&nbsp </span></a></li>
+
+                </ul>
+            
+            </div>
+
+           <div class="roll_nav">
+             <ul class="roll_top">
+                <li ><span class="chose" >小编推荐</span></li>
+                 <li><span>硬件详解</span></li>
+            </ul>
+             <div>
+                <ul class="roll_bottom">
+                <li><a href="#"><span>【剑三】纯阳宫新星“萧雪残云”一打三教学</span></a></li>
+                <li><a href="#"><span>【剑三】一击狂魔！惊羽决黑马“零零零光”</span></a></li>
+                <li><a href="#"><span>【LOL】我欲成仙，QWE圈</span></a></li>
+                <li><a href="#"><span>【剑三】东都之狂犬，南家军崛起之路</span></a></li>
+                <li><a href="#"><span>【剑三】奶花配盖饭，犀利花教你上12段</span></a></li>
+                <li><a href="#"><span>【剑三】扬州要饭大队，竟无一个丐帮</span></a></li>
+                <li><a href="#"><span>【守望】走位骚，屁股翘，子弹射不到</span></a></li>
+                <li><a href="#"><span>【泰瑞】炸穿大海，只为让服务器崩溃</span></a></li> 
+                <li><a href="#"><span>【剑三】纯阳宫新星“萧雪残云”一打三教学</span></a></li>
+                <li><a href="#"><span>【剑三】一击狂魔！惊羽决黑马“零零零光”</span></a></li>
+                <li><a href="#"><span>【LOL】我欲成仙，QWE圈</span></a></li>
+                <li><a href="#"><span>【剑三】东都之狂犬，南家军崛起之路</span></a></li>
+                <li><a href="#"><span>【剑三】奶花配盖饭，犀利花教你上12段</span></a></li>
+                <li><a href="#"><span>【剑三】扬州要饭大队，竟无一个丐帮</span></a></li>
+                <li><a href="#"><span>【守望】走位骚，屁股翘，子弹射不到</span></a></li>
+                <li><a href="#"><span>【泰瑞】炸穿大海，只为让服务器崩溃</span></a></li> 
+                
+            </ul>
+            <ul class="roll_bottom-2">
+                <li><a href="#"><span>纯阳宫新星“萧雪残云”一打三教学</span></a></li>
+                <li><a href="#"><span>一击狂魔！惊羽决黑马“零零零光”</span></a></li>
+                <li><a href="#"><span>【我欲成仙，QWE圈</span></a></li>
+                <li><a href="#"><span>东都之狂犬，南家军崛起之路</span></a></li>
+                <li><a href="#"><span>奶花配盖饭，犀利花教你上12段</span></a></li>
+                <li><a href="#"><span>扬州要饭大队，竟无一个丐帮</span></a></li>
+                <li><a href="#"><span>走位骚，屁股翘，子弹射不到</span></a></li>
+                <li><a href="#"><span>炸穿大海，只为让服务器崩溃</span></a></li> 
+                <li><a href="#"><span>纯阳宫新星“萧雪残云”一打三教学</span></a></li>
+                <li><a href="#"><span>一击狂魔！惊羽决黑马“零零零光”</span></a></li>
+                <li><a href="#"><span>【我欲成仙，QWE圈</span></a></li>
+                <li><a href="#"><span>东都之狂犬，南家军崛起之路</span></a></li>
+                <li><a href="#"><span>奶花配盖饭，犀利花教你上12段</span></a></li>
+                <li><a href="#"><span>扬州要饭大队，竟无一个丐帮</span></a></li>
+                <li><a href="#"><span>走位骚，屁股翘，子弹射不到</span></a></li>
+                <li><a href="#"><span>炸穿大海，只为让服务器崩溃</span></a></li> 
+                
+            </ul>
+             </div>
+
+           </div>
+           
+    <div class="message">
+        <h3>资讯中心</h3>
+         <img class="" src="images/小图.png"/>
+         <h5>《黑暗之魂3》DLC "环城" 新截图</h5>
+        <p>
+            《黑暗之魂3》官方社交账号上公布了一批新DLC“环形城市”的游戏截图，<br/>或多或少地展示了一些DLC内容，一起来看看。
+        </p>
+        <a href="#">火速围观&gt&gt</a>
+    </div>
+           <div class="xinxi">
+            <ul>
+            <li>   <a href="#">你为什么要去电影院看《最终幻想15王者之剑》</a> </li>
+           
+            <li> <a href="#">《王者荣耀》最恶心英雄TOP</a></li>
+            <li> <a href="#">《仁王》双刀心眼触发机制</a></li>
+            <li><a href="#">《守望先锋》三妹竟有自闭症</a></li>
+            <li> <a href="#">《天衍录》游戏角色出道当明星</a></li>
+            <li><a href="#">《幻想全明星》编辑器计划第一步</a></li>
+
+            </ul>
+             <ul>
+            <li>   <a href="#">你为什么要去电影院看《最终幻想15王者之剑》</a> </li>
+           
+            <li><a href="#">《王者荣耀》最恶心英雄TOP</a></li>
+            <li><a href="#">《仁王》双刀心眼触发机制</a></li>
+            <li> <a href="#">《守望先锋》三妹竟有自闭症</a></li>
+            <li> <a href="#">《天衍录》游戏角色出道当明星</a></li>
+            <li> <a href="#">《幻想全明星》编辑器计划第一步</a></li>
+
+            </ul>
+
+
+           </div >
+           <div class="jiangxiang">
+           <h4>奖杯信息</h4>
+           <img src="images/奖杯.jpg" alt="奖杯图片">
+           <ul >
+                <li> <a href="#">奖杯</a> </li>
+                <li> <a href="#">奖杯</a></li>
+                <li> <a href="#">奖杯</a></li>
+                <li> <a href="#">奖杯</a></li>
+                <li> <a href="#">奖杯</a></li>
+                <li> <a href="#">奖杯</a></li>
+           </ul>
+           
+           <div>
+
+
+           </div>
+
+    </div>
+
+
+
+</div>
+    <div class='footer'>
+        <img src="images/ELEV.png" alt="图图">
+        <div class="d1"><h3>频道索引</h3>
+            <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a>
+        </div>
+        <div class="d1"><h3>实用工具</h3>
+                <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a>
+        </div>
+        <div class="d1"><h3>巴士社区</h3>
+            <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a> <a href="#">社区</a>
+        </div>
+
+           <div class="ali-foot">
+        
+        <div class="ali-foot_c"><a rel="nofollow" href="http://www.ali213.net/about/" target="_blank">关于游侠</a> | <a rel="nofollow" href="http://www.ali213.net/about/as.html" target="_blank">广告合作</a> | <a rel="nofollow" href="http://www.ali213.net/about/job.html" target="_blank">人才招聘</a> | <a href="http://www.ali213.net/about/links.html" target="_blank">友情链接</a> | <a href="http://www.ali213.net/about/feedback.html" target="_blank" rel="nofollow">意见建议</a> | <a rel="nofollow" href="http://www.ali213.net/about/contact.html" target="_blank">联系我们</a> | <a href="http://www.ali213.net/about/sitemap.html" target="_blank">网站地图</a> | <a rel="nofollow" href="http://www.ali213.net/about/copyright.html" target="_blank">版权保护投诉指引</a><br>增值电信业务经营许可证 浙B2-20120287 | <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">浙ICP备12018679号-4</a> |  浙网文[2015]0882-251 | <a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502000468" target="_blank">浙公网安备 33010502000468号</a><br>CopyRight © 1999-2016 ALi213.Net All Right Reserved 游侠网 版权所有</div>
+    </div>
+    </div>
+    
+</body>
+</html>
